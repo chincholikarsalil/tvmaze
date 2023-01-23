@@ -1,11 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import parser from "html-react-parser";
 
 export const Show = ({ details }) => {
   const show = details.show;
+  const navigate = useNavigate();
+
+  const showDetails = () => {
+    navigate(`/show/${show.id}`);
+  };
 
   return (
     <div className="col-6">
-      <div className="card mt-3">
+      <div
+        className="card mt-3"
+        style={{ cursor: "pointer" }}
+        onClick={showDetails}
+      >
         <div className="row g-0">
           <div className="col-lg-4">
             <img

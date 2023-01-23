@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { getSchedule } from "../services/tvmaze";
 import { Show } from "./Show";
 
-export const Schedule = () => {
+export const Schedule = ({ setHeader }) => {
   const [schedule, setSchedule] = useState([]);
 
   useEffect(() => {
+    setHeader("TV Schedule");
     const fetchData = async () => {
       setSchedule(await getSchedule());
     };
