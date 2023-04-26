@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "sync": "aws s3 sync build/ s3://salil-tvmaze"
   },
   "eslintConfig": {
     "extends": [
